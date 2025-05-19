@@ -1,0 +1,15 @@
+# Ignore everything
+*
+
+# Allow specific files and directories
+!starship.toml
+!wofi/
+!wofi/*
+!waybar/
+!waybar/*
+!kitty/
+!kitty/*
+!hypr/
+!hypr/*
+!fish/config.fish
+!.gitignore
