@@ -4,7 +4,7 @@ if command -v playerctl > /dev/null 2>&1; then
   status=$(playerctl status 2> /dev/null)
 
   if [[ "$status" == "Paused" ]]; then
-    echo ""
+    echo "♫ -"
     exit 0
   fi
 
@@ -23,5 +23,5 @@ else
   exit 1
 fi
 
-echo "♫ No media player seems to be playing."
+echo "♫ -"
 exit 1
