@@ -9,8 +9,8 @@
     "margin-bottom": 0,
     "modules-left": [
         "clock",
-        "hyprland/window",
         "privacy",
+        "hyprland/window",
     ],
     "modules-center": [
         "hyprland/workspaces",
