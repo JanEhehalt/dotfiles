@@ -12,4 +12,5 @@
 !hypr/
 !hypr/*
 !fish/config.fish
+!wlogout/*
 !.gitignore

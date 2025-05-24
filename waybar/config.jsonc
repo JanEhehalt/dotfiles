@@ -9,18 +9,32 @@
     "margin-bottom": 0,
     "modules-left": [
         "clock",
-        "privacy"
+        "hyprland/window",
+        "privacy",
     ],
     "modules-center": [
-        "hyprland/workspaces"
+        "hyprland/workspaces",
     ],
     "modules-right": [
         "tray",
+        "network",
+        "cpu",
         "pulseaudio#microphone",
         "pulseaudio",
-        "network",
         "custom/power"
     ],
+    "cpu": {
+        "interval": 1,
+        "format": " {usage}% {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11} ",
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+        "format-alt": " {usage}% ",
+        "on-click-right": "kitty --hold sh -c 'vtop'",
+    },
+    "hyprland/window": {
+        "separate-outputs": true,
+        "icon": true,
+        "rewrite": { "(.*)": "" }
+    },
     "custom/power": {
         "format": "<span color=\"#BF616A\">⏻</span>",
         "tooltip": false,
@@ -56,29 +70,29 @@
     "network": {
         "interface": "enp42s0",
         "format": "{ifname}",
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "↓ {bandwidthDownBytes} ↑ {bandwidthUpBytes}",
-        "format-disconnected": "", //An empty format will hide the module.
-        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-        "tooltip-format-ethernet": "{ifname} ",
+        "format-alt": "<span color=\"#AAFFAA\">󰈁 Connected</span>",
+        "format-ethernet": " {bandwidthDownBytes}   {bandwidthUpBytes}",
+        "format-disconnected": "<span color=\"#7E3E44\">󰈂 Disconnected</span>",
+        "tooltip-format-ethernet": "{ipaddr} ",
         "tooltip-format-disconnected": "<span color=\"#7E3E44\">✈</span>",
+        "on-click-right": "curl -s -4 https://icanhazip.com | wl-copy",
         "max-length": 50,
         "interval": 2
     },
     "pulseaudio#microphone": {
         "format": "{format_source}",
         "format-source": " {volume}%",
-        "format-source-muted": "<span color=\"#7E3E44\">    Muted</span>",
+        "format-source-muted": "<span color=\"#7E3E44\">  Muted</span>",
         "on-click": "pamixer --default-source -t",
         "on-scroll-up": "pamixer --default-source -i 5",
         "on-scroll-down": "pamixer --default-source -d 5",
-        "scroll-step": 5
+        "scroll-step": 5,
+        "on-click-right": "pavucontrol",
     },
     "pulseaudio": {
         "format": "{icon}  {volume}%",
         "tooltip": false,
-        "format-muted": "<span color=\"#7E3E44\">    Muted</span>",
+        "format-muted": "<span color=\"#7E3E44\">  Muted</span>",
         "on-click": "pamixer -t",
         "on-click-right": "pavucontrol",
         "on-scroll-up": "pamixer -i 5",
@@ -109,8 +123,8 @@
         }
     },
     "clock": {
-        "format": "  {:%H:%M}",
-        "format-alt": "   {:%A, %d.%m.%Y}",
+        "format": "\uf017  {:%H:%M}",
+        "format-alt": "\uf017   {:%A, %d.%m.%Y}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
             "mode"          : "month",

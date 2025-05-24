@@ -1,14 +1,22 @@
+@define-color background_color_light rgba( 88,  96, 134, 0.5);
+@define-color background_color_dark  rgba( 44,  48,  67, 0.5);
+@define-color accent_color_1         rgba(178, 192, 255, 1.0);
+@define-color accent_color_2         rgba( 88,  96, 134, 0.8);
+@define-color font_color_light       rgba(222, 247, 255, 1.0);
+@define-color font_color_dark        rgba( 49,  49,  49, 1.0);
+
+
 window {
-    border: 2px solid rgba(126, 62, 68, 0.6);
-    background-color: rgba(37, 37, 37, 0.6);
+    border: 2px solid @accent_color_2;
+    background-color: @background_color_dark;
     border-radius: 25px;
 }
 
 #input {
     margin: 10px;
     border: none;
-    color: #f8f8f2;
-    background-color: rgba(75, 75, 75, 0.6);
+    color: @font_color_light;
+    background-color: @background_color_light;
     border-radius: 20px;
 }
 
@@ -23,7 +31,7 @@ window {
 #text {
     margin: 5px;
     border: none;
-    color: #f8f8f2;
+    color: @font_color_light;
 } 
 
 #entry.activatable #text {
@@ -31,11 +39,11 @@ window {
 }
 
 #entry > * {
-    color: #f8f8f2;
+    color: @font_color_light;
 }
 
 #entry:selected {
-    background-color: rgba(191, 97, 106, 0.6);
+    background-color: @accent_color_2;
     border-radius: 20px;
 }
 
