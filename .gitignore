@@ -13,4 +13,5 @@
 !hypr/*
 !fish/config.fish
 !wlogout/*
+!neofetch/*
 !.gitignore
