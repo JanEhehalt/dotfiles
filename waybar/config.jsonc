@@ -32,7 +32,7 @@
         "on-click-right": "kitty --hold sh -c 'vtop'",
     },
     "temperature": {
-        "hwmon-path": ["/sys/class/hwmon/hwmon0/temp1_input"],
+        "hwmon-path": ["/sys/class/hwmon/hwmon2/temp1_input"],
         // "critical-threshold": 80, // You can uncomment and set your critical threshold here
         // "format-critical": "{temperatureC}°C ", // And its format
         "format": "{temperatureC}°C "
