@@ -19,16 +19,23 @@
         "tray",
         "network",
         "cpu",
+        "temperature",
         "pulseaudio#microphone",
         "pulseaudio",
         "custom/power"
     ],
     "cpu": {
         "interval": 1,
-        "format": " {usage}% {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11} ",
+        "format": "  {usage} % {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15} ",
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
-        "format-alt": " {usage}% ",
+        "format-alt": "  {usage} % ",
         "on-click-right": "kitty --hold sh -c 'vtop'",
+    },
+    "temperature": {
+        "hwmon-path": ["/sys/class/hwmon/hwmon0/temp1_input"],
+        // "critical-threshold": 80, // You can uncomment and set your critical threshold here
+        // "format-critical": "{temperatureC}°C ", // And its format
+        "format": "{temperatureC}°C "
     },
     "hyprland/window": {
         "separate-outputs": true,
@@ -70,7 +77,7 @@
     "network": {
         "interface": "enp42s0",
         "format": "{ifname}",
-        "format-alt": "<span color=\"#AAFFAA\">󰈁 Connected</span>",
+        "format-alt": "󰈁 Connected",
         "format-ethernet": " {bandwidthDownBytes}   {bandwidthUpBytes}",
         "format-disconnected": "<span color=\"#7E3E44\">󰈂 Disconnected</span>",
         "tooltip-format-ethernet": "{ipaddr} ",
