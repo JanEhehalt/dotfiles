@@ -20,22 +20,36 @@
         "network",
         "cpu",
         "temperature",
+        "custom/gpuutil",
+        "custom/gputemp",
         "pulseaudio#microphone",
         "pulseaudio",
         "custom/power"
     ],
     "cpu": {
         "interval": 1,
-        "format": "  {usage} % {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15} ",
+        "format-alt": " {usage} % {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}",
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
-        "format-alt": "  {usage} % ",
+        "format": "  {usage}%",
         "on-click-right": "kitty --hold sh -c 'vtop'",
     },
     "temperature": {
         "hwmon-path": ["/sys/class/hwmon/hwmon2/temp1_input"],
         // "critical-threshold": 80, // You can uncomment and set your critical threshold here
         // "format-critical": "{temperatureC}°C ", // And its format
-        "format": "{temperatureC}°C "
+        "format": " {temperatureC}°C | "
+    },
+    "custom/gpuutil": {
+        "format": "󰇄  {text}%",
+        "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+        "interval": 1,
+        "tooltip": false
+    },
+    "custom/gputemp": {
+        "format": " {text}°C",
+        "exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits",
+        "interval": 1,
+        "tooltip": false
     },
     "hyprland/window": {
         "separate-outputs": true,
@@ -126,7 +140,9 @@
         "persistent-workspaces": {
             //"*": 5
             "DP-1": [1, 2, 3, 4, 5, 6, 7, 8, 9],
-            "HDMI-A-1": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            "DP-2": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+            "HDMI-A-1": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+            "HDMI-A-2": [1, 2, 3, 4, 5, 6, 7, 8, 9]
         }
     },
     "clock": {
