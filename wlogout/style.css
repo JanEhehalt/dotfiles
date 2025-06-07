@@ -1,0 +1,63 @@
+@define-color background_color_light rgba( 88,  96, 134, 0.8);
+@define-color background_color_dark  rgba( 44,  48,  67, 0.8);
+@define-color accent_color_1         rgba(178, 192, 255, 1.0);
+@define-color accent_color_2         rgba( 88,  96, 134, 0.8);
+@define-color font_color_light       rgba(222, 247, 255, 1.0);
+@define-color font_color_dark        rgba( 49,  49,  49, 1.0);
+
+* {
+	background-image: none;
+	box-shadow: none;
+}
+
+window {
+	background-color: @background_color_dark;
+}
+
+button {
+	font-size: 24px;
+	border-radius: 0;
+	border-color: @background_color_light;
+	text-decoration-color: @font_color_light;
+	color: @font_color_light;
+	background-color: @background_color_dark;
+	border-style: solid;
+	border-width: 2px;
+    border-radius: 50px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 15%;
+    margin: 25px;
+	
+    background-repeat: no-repeat;
+    transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+button:hover {
+	background-color: @background_color_light;
+	outline-style: none;
+}
+
+#lock {
+    background-image: url("/home/jan/.config/wlogout/icons/lock.svg");
+}
+
+#logout {
+    background-image: url("/home/jan/.config/wlogout/icons/logout.svg");
+}
+
+#suspend {
+    background-image: url("/home/jan/.config/wlogout/icons/suspend.svg");
+}
+
+#hibernate {
+    background-image: url("/home/jan/.config/wlogout/icons/hibernate.svg");
+}
+
+#shutdown {
+    background-image: url("/home/jan/.config/wlogout/icons/shutdown.svg");
+}
+
+#reboot {
+    background-image: url("/home/jan/.config/wlogout/icons/reboot.svg");
+}
