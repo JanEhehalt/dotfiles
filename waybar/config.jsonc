@@ -59,7 +59,7 @@
     "custom/power": {
         "format": "<span color=\"#BF616A\">⏻</span>",
         "tooltip": false,
-        "on-click": "wlogout"
+        "on-click": "wlogout -b 6"
     },
     "tray": {
         "icon-size": 21,
