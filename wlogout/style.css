@@ -5,59 +5,60 @@
 @define-color font_color_light       rgba(222, 247, 255, 1.0);
 @define-color font_color_dark        rgba( 49,  49,  49, 1.0);
 
-* {
-	background-image: none;
-	box-shadow: none;
-}
 
 window {
-	background-color: @background_color_dark;
+    font-family: CaskaydiaCove Nerd Font, monospace;
+    font-size: 12pt;
+    color: #f4dfcd; 
+    background-color: rgba(30, 30, 46, .69);
 }
 
 button {
-	font-size: 24px;
-	border-radius: 0;
-	border-color: @background_color_light;
-	text-decoration-color: @font_color_light;
-	color: @font_color_light;
-	background-color: @background_color_dark;
-	border-style: solid;
-	border-width: 2px;
-    border-radius: 50px;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 15%;
-    margin: 25px;
-	
     background-repeat: no-repeat;
+    background-position: center;
+    font-size: 40px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-size: 60%;
+    border: none;
+    color: @accent_color_1;
+    text-shadow: none;
+    border-radius: 20px 20px 20px 20px;
+    background-color: rgba(1, 121, 111, 0);
+    margin: 2px;
     transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 button:hover {
-	background-color: @background_color_light;
-	outline-style: none;
+    background-color: @background_color_light;
 }
 
 #lock {
-    background-image: url("/home/jan/.config/wlogout/icons/lock.svg");
+    background-image: image(url("/home/jan/.config/wlogout/icons/lock.svg"));
+    background-size: 200px;
 }
 
 #logout {
-    background-image: url("/home/jan/.config/wlogout/icons/logout.svg");
+    background-image: image(url("/home/jan/.config/wlogout/icons/logout.svg"));
+    background-size: 200px;
 }
 
 #suspend {
-    background-image: url("/home/jan/.config/wlogout/icons/suspend.svg");
-}
-
-#hibernate {
-    background-image: url("/home/jan/.config/wlogout/icons/hibernate.svg");
-}
+    background-image: image(url("/home/jan/.config/wlogout/icons/suspend.svg"));
+    background-size: 200px;
+} 
 
 #shutdown {
-    background-image: url("/home/jan/.config/wlogout/icons/shutdown.svg");
+    background-image: image(url("/home/jan/.config/wlogout/icons/shutdown.svg"));
+    background-size: 200px;
 }
 
 #reboot {
-    background-image: url("/home/jan/.config/wlogout/icons/reboot.svg");
+    background-image: image(url("/home/jan/.config/wlogout/icons/reboot.svg"));
+    background-size: 200px;
+}
+
+#hibernate {
+    background-image: image(url("/home/jan/.config/wlogout/icons/hibernate.svg"));
+    background-size: 200px;
 }
