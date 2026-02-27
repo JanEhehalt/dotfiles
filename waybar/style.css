@@ -1,12 +1,12 @@
 @define-color background_color_light rgba( 88,  96, 134, 1.0);
-@define-color background_color_dark  rgba( 22,  24,  33, 1.0);
-@define-color accent_color_1         rgba(89, 96, 128, 1.0);
+@define-color background_color_dark  rgba( 30,  36, 50, 1.0);
+@define-color accent_color_1         rgba(180, 192, 255, 1.0);
 @define-color accent_color_2         rgba( 44,  48, 75, 1.0);
 @define-color accent_color_3         rgba(251, 180, 148, 1.0);
-@define-color font_color_light       rgba(222, 247, 255, 1.0);
+@define-color font_color_light       rgba(180, 200, 210, 1.0);
 @define-color font_color_dark        rgba( 80,  80,  80, 1.0);
-@define-color border_top_color       rgba(89, 96, 128, 1.0);
-@define-color border_bottom_color    rgba( 44,  48, 75, 1.0);
+@define-color border_top_color       rgba(89, 96, 128, 0.0);
+@define-color border_bottom_color    rgba( 44,  48, 75, 0.0);
 
 * {
     border-radius: 16px;
@@ -26,38 +26,41 @@ window#waybar.empty #window {
 }  
 
 #workspaces {
+    font-size: 10px;
     background-color: @background_color_dark;
     padding-left:  16px;
     padding-right: 16px;
-    border-top:    solid @border_top_color    1px;
-    border-left:   solid @border_top_color    1px;
-    border-bottom: solid @border_bottom_color 1px;
+    border-top:    solid @border_top_color    2px;
+    border-bottom: solid @border_bottom_color 2px;
+    border-left:   solid @border_top_color    2px;
 }
 
 #workspaces button.empty {
     color: @font_color_dark;
-    font-size: 10px;
+    font-size: 8px;
 }
+
+
 
 #workspaces button.visible {
     color: @accent_color_2;
-    border-bottom: solid @accent_color_2 2px;
+    border-bottom: solid @border_bottom_color 2px;
     border-radius: 0px;
     font-weight: bold;
 }
 
 #workspaces button.hosting-monitor.visible {
     color: @accent_color_1;
-    border-bottom: solid @accent_color_1 4px;
+    border-bottom: solid @border_bottom_color 4px;
     border-radius: 0px;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bold;
 }
 
 #clock {
-    border-top: solid @accent_color_1 1px;
-    border-left: solid @accent_color_1 1px;
-    border-bottom: solid @accent_color_2 1px;
+    border-top: solid @border_top_color 2px;
+    border-left: solid @border_top_color 2px;
+    border-bottom: solid @border_bottom_color 2px;
     background-color: @background_color_dark;
     margin-right: 12px;
     margin-left: 4px;
@@ -68,26 +71,26 @@ window#waybar.empty #window {
 }
 
 #pulseaudio {
-    border-top: solid @accent_color_1 1px;
-    border-bottom: solid @accent_color_2 1px;
+    border-top: solid @border_top_color 2px;
+    border-bottom: solid @border_bottom_color 2px;
     background-color: @background_color_dark;
     padding-right: 16px;
     border-radius: 0px 16px 16px 0px;
 }
 
 #pulseaudio.microphone {
-    border-top: solid @accent_color_1 1px;
-    border-left: solid @accent_color_1 1px;
-    border-bottom: solid @accent_color_2 1px;
+    border-top: solid @border_top_color 2px;
+    border-left: solid @border_top_color 2px;
+    border-bottom: solid @border_bottom_color 2px;
     background-color: @background_color_dark;
     padding-left:  16px;
     border-radius: 16px 0px 0px 16px;
 }
 
 #tray {
-    border-top: solid @accent_color_1 1px;
-    border-left: solid @accent_color_1 1px;
-    border-bottom: solid @accent_color_2 1px;
+    border-top: solid @border_top_color 2px;
+    border-left: solid @border_top_color 2px;
+    border-bottom: solid @border_bottom_color 2px;
     background-color: @background_color_dark;
     margin-right: 12px;
     margin-left: 12px;
@@ -96,9 +99,9 @@ window#waybar.empty #window {
 }
 
 #network {
-    border-top: solid @accent_color_1 1px;
-    border-left: solid @accent_color_1 1px;
-    border-bottom: solid @accent_color_2 1px;
+    border-top: solid @border_top_color 2px;
+    border-left: solid @border_top_color 2px;
+    border-bottom: solid @border_bottom_color 2px;
     background-color: @background_color_dark;
     margin-right: 12px;
     margin-left: 12px;
@@ -109,9 +112,9 @@ window#waybar.empty #window {
 
 
 #privacy {
-    border-top: solid @accent_color_1 1px;
-    border-left: solid @accent_color_1 1px;
-    border-bottom: solid @accent_color_2 1px;
+    border-top: solid @border_top_color 2px;
+    border-left: solid @border_top_color 2px;
+    border-bottom: solid @border_bottom_color 2px;
     background-color: @background_color_dark;
     margin-right: 12px;
     margin-left: 12px;
@@ -120,9 +123,9 @@ window#waybar.empty #window {
 }
 
 #custom-power {
-    border-top: solid @accent_color_1 1px;
-    border-left: solid @accent_color_1 1px;
-    border-bottom: solid @accent_color_2 1px;
+    border-top: solid @border_top_color 2px;
+    border-left: solid @border_top_color 2px;
+    border-bottom: solid @border_bottom_color 2px;
     background-color: @background_color_dark;
     margin-right: 4px;
     margin-left: 24px;
@@ -131,9 +134,9 @@ window#waybar.empty #window {
 }
 
 #window {
-    border-top: solid @accent_color_1 1px;
-    border-left: solid @accent_color_1 1px;
-    border-bottom: solid @accent_color_2 1px;
+    border-top: solid @border_top_color 2px;
+    border-left: solid @border_top_color 2px;
+    border-bottom: solid @border_bottom_color 2px;
     background-color: @background_color_dark;
     margin-right: 12px;
     margin-left: 12px;
@@ -141,9 +144,9 @@ window#waybar.empty #window {
 }
 
 #cpu {
-    border-top: solid @accent_color_1 1px;
-    border-left: solid @accent_color_1 1px;
-    border-bottom: solid @accent_color_2 1px;
+    border-top: solid @border_top_color 2px;
+    border-left: solid @border_top_color 2px;
+    border-bottom: solid @border_bottom_color 2px;
     background-color: @background_color_dark;
     margin-left: 12px;
     padding-left:  6px;
@@ -152,24 +155,24 @@ window#waybar.empty #window {
     min-width: 50px;
 }
 #temperature {
-    border-top: solid @accent_color_1 1px;
-    border-bottom: solid @accent_color_2 1px;
+    border-top: solid @border_top_color 2px;
+    border-bottom: solid @border_bottom_color 2px;
     background-color: @background_color_dark;
     padding-left:  6px;
     border-radius: 0px 0px 0px 0px;
     min-width: 50px;
 }
 #custom-gpuutil {
-    border-top: solid @accent_color_1 1px;
-    border-bottom: solid @accent_color_2 1px;
+    border-top: solid @border_top_color 2px;
+    border-bottom: solid @border_bottom_color 2px;
     background-color: @background_color_dark;
     padding-right:  8px;
     border-radius: 0px 0px 0px 0px;
     min-width: 50px;
 }
 #custom-gputemp {
-    border-top: solid @accent_color_1 1px;
-    border-bottom: solid @accent_color_2 1px;
+    border-top: solid @border_top_color 2px;
+    border-bottom: solid @border_bottom_color 2px;
     background-color: @background_color_dark;
     margin-right: 24px;
     padding-right:  8px;

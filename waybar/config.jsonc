@@ -54,7 +54,9 @@
     "hyprland/window": {
         "separate-outputs": true,
         "icon": true,
-        "rewrite": { "(.*)": "" }
+        "rewrite": { 
+            "(.*)": ""
+        }
     },
     "custom/power": {
         "format": "<span color=\"#BF616A\">⏻</span>",
@@ -146,22 +148,30 @@
         }
     },
     "clock": {
-        "format": "\uf017  {:%H:%M}",
-        "format-alt": "\uf017   {:%A, %d.%m.%Y}",
+        "interval": 1,
+        "format": "\uf017  {:%H:%M | %d.%m.%Y}",
+        "format-alt": "\uf017  {:%H:%M:%S | %A, %d.%m.%Y}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
-            "mode"          : "month",
-            "mode-mon-col"  : 3,
-            "on-scroll"     : 1,
-            "on-click-right": "mode",
-            
+            "mode": "month",
+            "mode-mon-col": 4,
+            "weeks-pos": "left",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{:%V}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
         },
         "actions": {
             "on-click-right": "mode",
             "on-scroll-up": "shift_down",
             "on-scroll-down": "shift_up"
         }
-    },
+        
+    }
 
 
 }
